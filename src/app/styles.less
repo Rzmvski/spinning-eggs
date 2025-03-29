@@ -1,0 +1,20 @@
+@pink: #ec4899;
+@purple: #a855f7;
+
+body {
+  background: linear-gradient(to bottom right, @purple, @pink);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 100px;
+  touch-action: none;
+
+  .egg-wrapper:nth-child(2) {
+    margin-bottom: 100px;
+  }
+}

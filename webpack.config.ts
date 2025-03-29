@@ -14,6 +14,7 @@ const webpackConfig: WebpackConfiguration = {
     chunkFilename: 'js/[name].js'
   },
   context: src,
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -27,6 +28,7 @@ const webpackConfig: WebpackConfiguration = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
+          'css-loader',
           'less-loader',
         ],
       },

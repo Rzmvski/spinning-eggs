@@ -1,0 +1,36 @@
+@egg-width: 150px;
+@egg-height: 200px;
+
+.egg-container {
+  position: relative;
+  width: @egg-width;
+  height: @egg-height;
+  cursor: grab;
+  touch-action: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.egg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #f2f1ee 0%, #d0c8bb 80%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transition: filter 0.3s ease;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.egg-highlight {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 20%;
+  height: 20%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(7px);
+  pointer-events: none;
+}
