@@ -2,6 +2,8 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackConfiguration } from 'webpack-cli';
+import { DefinePlugin } from 'webpack';
+import * as process from 'process';
 
 const src = path.resolve(__dirname, 'src');
 const dist = path.resolve(__dirname, 'dist');
@@ -42,6 +44,9 @@ const webpackConfig: WebpackConfiguration = {
     },
   },
   plugins: [
+    new DefinePlugin({
+      'process.env.OPENROUTER_API_KEY': JSON.stringify(process.env.OPENROUTER_API_KEY)
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
