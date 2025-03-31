@@ -45,7 +45,8 @@ const webpackConfig: WebpackConfiguration = {
   },
   plugins: [
     new DefinePlugin({
-      'process.env.OPENROUTER_API_KEY': JSON.stringify(process.env.OPENROUTER_API_KEY)
+      'process.env.OPENROUTER_API_KEY': JSON.stringify(process.env.OPENROUTER_API_KEY),
+      'process.env.MODEL': JSON.stringify(process.env.MODEL),
     }),
     new HtmlWebpackPlugin({
       template: './index.html',

@@ -29,6 +29,7 @@ jobs:
       - name: Build project
         run: |
           export OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+          export MODEL=${{ secrets.MODEL }}
           npm run build
 
       - name: Upload artifact
